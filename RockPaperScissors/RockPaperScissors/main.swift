@@ -106,6 +106,7 @@ func runGame() {
     guard userWannaExit == false else { return }
 }
 
+
 func decideFirstTurn() -> (Player, Bool) {
     var matchResult: MatchResult
     

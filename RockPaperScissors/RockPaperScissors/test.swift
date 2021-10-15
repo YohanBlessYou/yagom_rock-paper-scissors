@@ -1,38 +1,42 @@
+
+
 func main() {
-    startA()
+    STEP1()
 
-    if input == 0 { return }
-    
-    startB()
+    if input == "0" { return }
+
+    STEP2()
 }
 
-func startA() {
-    repeat {
+func STEP2() {
+    //큰 루프 
+    while true {
+        //작은 루프
+        사용자옵션 = 사용자옵션결정()
 
-        repeat {
+        if 사용자옵션 == "0" { return }
 
-        } while 입력잘못
+        상대패결정()
 
-        if input == 0 { return }
+        if 같은지체크() == true { break }
 
-        승패결정()
+        턴변경()
+        턴출력()
+    }
 
-    } while 승패==비김
-
-    승자출력
+    승리자출력()
 }
 
-func startB() {
-    
-    repeat {
-        repeat {
-
-
-        } while 입력잘못
- 
-        if input==0 { return }
-
-    } while 상대패==유저패
-
-    승자출력
+func 사용자옵션결정() -> 사용자옵션 {
+    var 입력검증결과 = false
+    var 사용자옵션
+    while 입력검증결과 == false {
+        안내문구()
+        사용자옵션 = 사용자입력()
+        입력검증결과 = 입력검증(사용자입력)
+        if 입력검증결과 == true { break }
+        컴퓨터턴으로변경()
+        턴출력()
+    }
 }
+
